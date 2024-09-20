@@ -91,7 +91,6 @@ def play():
     #set bombs counter
     hidden_rem_bombs = 10
     shown_rem_bombs = 10
-    print_grid(hidden_grid)
     while hidden_rem_bombs:
         print('The remaining bombs = ',shown_rem_bombs)
         print_grid(shown_grid)
