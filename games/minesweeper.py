@@ -59,11 +59,11 @@ def set_game_grid():
 def print_grid(grid):
     print('  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8' ,end='')
     for i in range(0,8):
-        print('\n-----------------------------------')
+        print('\n','-'*33)
         print(i + 1,end= ' ')
         for j in range(0,8):
            print('|',grid[i][j] ,end= ' ')
-    print('\n-----------------------------------')
+    print('\n','-'*33)
 
 def bfs(base_row,base_col,real_grid,fake_grid,visited):
     q = Queue()
@@ -100,7 +100,7 @@ def play():
             continue
         x = int(cell[1]) - 1
         y = int(cell[2]) - 1
-        if not (cell[0] == 'D' or cell[0] == 'F' or cell[0] == 'U') or not can(x,y):
+        if cell[0] not in 'FDU' or not can(x,y):
             continue
 
         if cell[0] == 'U':
